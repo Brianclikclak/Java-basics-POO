@@ -26,15 +26,15 @@ public class Coche {
                 " metros con un ancho de " + ancho + " cm y un peso de plataforma de " + peso_plataforma + " kg.";
     }
 
-    public void set_color(String color_coche){  // Este es el metodo SETTER - Establecemos el color del coche
+    public void set_color(String color_coche){      // Este es el metodo SETTER - Establecemos el valor del atributo
         color = color_coche;
     }
 
-    public String get_color(){ // Este es el metodo GETTER - Retornamos el color del coche
+    public String get_color(){      // Este es el metodo GETTER - Retornamos el valor del atributo
         return "El color del coche es " + color;
     }
 
-    public void configura_asientos(String asientos_cuero){  //Metodo SETTER
+    public void configura_asientos(String asientos_cuero){     //Metodo SETTER
 
         if(asientos_cuero == "si"){
             this.asientos_cuero = true;
@@ -44,7 +44,7 @@ public class Coche {
         }
     }
 
-    public  String dime_asientos(){  // Metodo GETTER
+    public  String dime_asientos(){     // Metodo GETTER
 
         if(asientos_cuero){
             return "El coche tiene asientos de cuero";
@@ -52,6 +52,40 @@ public class Coche {
         else{
           return "El coche tiene asientos de serie";
         }
+    }
+
+    public void configura_climatizador(String climatizador){     //Metodo SETTER
+
+        if (climatizador == "si"){
+            this.climatizador = true;
+        }
+        else {
+            this.climatizador = false;
+        }
+    }
+
+    public  String dime_climatizador(){       // Metodo GETTER
+
+        if (climatizador == true){
+            return "El coche viene con climatizador incorporado";
+        }
+        else {
+            return "El coche viene con aire acondicionado";
+        }
+    }
+
+    public String dime_peso_coche(){       // SETTER + GETTER
+
+        int peso_carroceria = 500;
+        peso_total = peso_plataforma + peso_carroceria;    // Establecemos un peso total = SETTER
+
+        if (asientos_cuero == true){
+            peso_total = peso_total + 50;
+        }
+        if (climatizador == true){
+            peso_total = peso_total + 20;
+        }
+        return "El peso del coche es " + peso_total;       // Retornamos el peso total = GETTER
     }
 
 
