@@ -2,7 +2,6 @@ package poo;
 
 public class Coche {
 
-
     private int ruedas;
     private int largo;
     private int ancho;              // Estos son los Atributos que tiene el coche
@@ -36,7 +35,7 @@ public class Coche {
 
     public void configura_asientos(String asientos_cuero){     //Metodo SETTER
 
-        if(asientos_cuero == "si"){
+        if(asientos_cuero.equalsIgnoreCase("si")){
             this.asientos_cuero = true;
         }
         else{
@@ -47,16 +46,16 @@ public class Coche {
     public  String dime_asientos(){     // Metodo GETTER
 
         if(asientos_cuero){
-            return "El coche tiene asientos de cuero";
+            return "El coche tiene asientos de cuero.";
         }
         else{
-          return "El coche tiene asientos de serie";
+          return "El coche tiene asientos de serie.";
         }
     }
 
     public void configura_climatizador(String climatizador){     //Metodo SETTER
 
-        if (climatizador == "si"){
+        if (climatizador.equalsIgnoreCase("si")){
             this.climatizador = true;
         }
         else {
@@ -67,10 +66,10 @@ public class Coche {
     public  String dime_climatizador(){       // Metodo GETTER
 
         if (climatizador == true){
-            return "El coche viene con climatizador incorporado";
+            return "El coche viene con climatizador incorporado.";
         }
         else {
-            return "El coche viene con aire acondicionado";
+            return "El coche viene con aire acondicionado.";
         }
     }
 
@@ -85,11 +84,21 @@ public class Coche {
         if (climatizador == true){
             peso_total = peso_total + 20;
         }
-        return "El peso del coche es " + peso_total;       // Retornamos el peso total = GETTER
+        return "El peso del coche es " + peso_total + "kg.";       // Retornamos el peso total = GETTER
     }
 
+    public int precio_coche(){
 
+        int precio_final = 10000;
 
+        if (asientos_cuero == true){
+            precio_final += 2000;
+        }
+        if (climatizador == true){
+            precio_final += 1500;
+        }
+        return precio_final;
+    }
 
 }
 
