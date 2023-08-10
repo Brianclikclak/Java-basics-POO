@@ -1,3 +1,3 @@
 # Java-basics-POO
 
-learning the basics os Java
+learning the basics of Java
