@@ -1,4 +1,4 @@
 # Java-basics-POO
 
-learning the basics of Java
+learning to use Poo with java
 whit using a car as example
